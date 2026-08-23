@@ -133,6 +133,10 @@ pageEncoding="UTF-8"%>
     <h1> &#127909 &#128250 &#127931 <B>NikTube </B> </h1>
     <input type="text" id="searchInput" placeholder="Search...">
     <button onclick="searchVideo()">Search</button>
+
+    <button onclick="myFunction21()" >
+             &#128250 Go to Video Database
+         </button>
   </header>
 
 <center>
@@ -185,6 +189,11 @@ pageEncoding="UTF-8"%>
 
                             function myFunction3() {
                                   window.location.href = "/uploadvideo";
+                                  }
+
+
+                     function myFunction21() {
+                                 window.location.href = "/ListVideos";
                                   }
 
       </script>

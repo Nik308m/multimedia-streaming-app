@@ -1,18 +1,23 @@
 package com.Nikhil308.NikTube.Model;
 
 import jakarta.persistence.*;
-
+import java.sql.*;
+import java.util.List;
+import java.util.ArrayList;
 
 @Entity
-@Table(name = "VideosData")
+@Table(name = "videos_data")
 public class Video {
 
+
+    //PostgreSQL uses SERIAL for auto-incrementing columns, whereas MySQL uses AUTO_INCREMENT.
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Lob
-    @Column(name = "content", columnDefinition = "byte[]")
+   // @Lob
+   // @Column(name = "content")// @Column(name = "content", columnDefinition = "byte[]")
+    @Column(name = "content", columnDefinition = "bytea")
     private byte[] content;
 
     // Add other fields as needed
@@ -31,6 +36,13 @@ public class Video {
         this.vname=dname;
         this.vdescription=ddescription;
         this.content = content;
+    }
+
+    public Video(byte[] content,String dname, String ddescription,long id) {
+        this.vname=dname;
+        this.vdescription=ddescription;
+        this.content = content;
+        this.id=id;
     }
 
     // Getters and setters

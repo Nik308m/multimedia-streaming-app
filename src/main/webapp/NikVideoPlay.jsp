@@ -99,6 +99,29 @@
       background-color: #ff0000;
       color: white;
     }
+
+    .gif-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+      overflow-x: auto; /* Enable horizontal scrolling */
+      scrollbar-width: thin; /* Set the width of the scrollbar */
+      scrollbar-color: #ff6b00 #ff0000; /* Set the color of the scrollbar */
+    }
+
+    .gif-wrapper {
+      margin-right: 20px; /* Add space between GIFs */
+    }
+
+    .gif-wrapper:last-child {
+      margin-right: 0; /* Remove margin from the last GIF to avoid extra space */
+    }
+
+    .gif-wrapper img {
+      width: 200px; /* Set the width of the GIF */
+      height: auto; /* Maintain aspect ratio */
+    }
   </style>
   <title>&#127794 &#127795 &#127796  &#129442 NikTube &#129434  &#127796  &#127795 &#127794 </title>
 </head>
@@ -107,6 +130,27 @@
   <header>
     <h1>&#127909 &#128250 &#127931 <strong>NikTube</strong></h1>
   </header>
+
+    <div class="gif-container">
+      <div class="gif-wrapper">
+        <img src="/GIFS_Webpage/HomePageRelated/Tom and Jerry Kids Show Theme.gif" alt="GIF 1">
+      </div>
+      <div class="gif-wrapper">
+        <img src="/GIFS_Webpage/HomePageRelated/Scooby Doo.gif" alt="GIF 2">
+      </div>
+      <div class="gif-wrapper">
+        <img src="/GIFS_Webpage/HomePageRelated/oswald-octopus.gif" alt="GIF 3">
+      </div>
+      <div class="gif-wrapper">
+        <img src="/GIFS_Webpage/HomePageRelated/Agaya Noddy.gif" alt="GIF 4">
+      </div>
+    </div>
+
+
+
+
+
+
 
   <div class="button-container">
     <button class="button button1" onclick="myFunction()"> &#128251 Go to Music Streaming Page</button>

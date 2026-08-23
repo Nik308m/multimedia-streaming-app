@@ -136,6 +136,14 @@ pageEncoding="UTF-8"%>
     <h1> &#127909 &#128250 &#127931 <B>NikTube Music </B> </h1>
     <input type="text" id="searchInput" placeholder="Search...">
     <button onclick="searchMusic()" onmouseover="mOver(this)" onmouseout="mOut(this)" >Search</button>
+
+     <button onclick="myFunction21()" >
+         &#128251 Go to Music Database
+     </button>
+
+
+
+
   </header><br><br>
 
       <center>
@@ -203,6 +211,11 @@ function mOut(obj) {
                       function myFunction3() {
                             window.location.href = "/uploadvideo";
                             }
+
+
+               function myFunction21() {
+                                           window.location.href = "/ListMusics";
+                                           }
 
 </script>
 <noscript>Sorry, your browser does not support JavaScript!</noscript>

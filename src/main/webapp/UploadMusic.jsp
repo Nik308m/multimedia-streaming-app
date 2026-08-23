@@ -104,6 +104,11 @@ pageEncoding="UTF-8"%>
 
     <header>
         <h1>NikTube Music</h1>
+
+        <button onclick="myFunction21()" >
+                 &#128251 Go to Music Database
+             </button>
+
     </header>
 
     <div class="container">
@@ -174,6 +179,10 @@ pageEncoding="UTF-8"%>
         function myFunction3() {
             window.location.href = "/uploadvideo";
         }
+
+         function myFunction21() {
+                                                   window.location.href = "/ListMusics";
+                                                   }
     </script>
 </body>
 

@@ -5,6 +5,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 
 
+/* @Controller is used to declare common web controllers which can return HTTP response but
+ @RestController is used to create controllers for REST APIs which can return JSON  */
+
+
+
+/* The @RequestMapping annotation is used to map requests to controllers methods. It has
+various attributes to match by URL, HTTP method, request parameters, headers, and media types.
+You can use it at the class level to express shared mappings or at the method level to narrow
+down to a specific endpoint mapping. */
 @Controller
 @RequestMapping("/")
 public class MainController {
@@ -37,6 +46,20 @@ public class MainController {
     String  uploadVideo(){
 
         return "UploadVideo.jsp";
+    }
+
+
+
+    @RequestMapping("/ListVideos")
+    String  ListVideo(){
+
+        return "ListVideos.jsp";
+    }
+
+    @RequestMapping("/ListMusics")
+    String  ListMusic(){
+
+        return "ListMusics.jsp";
     }
 
 }

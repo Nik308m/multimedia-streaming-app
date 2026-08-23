@@ -2,22 +2,18 @@ package com.Nikhil308.NikTube.Controllers;
 
 
 
-import com.Nikhil308.NikTube.Model.Video;
-import com.Nikhil308.NikTube.NikTubeDataRepository;
+import com.Nikhil308.NikTube.Model.VideoJSONData;
 import com.Nikhil308.NikTube.Repo.VideoRepository;
-import com.Nikhil308.NikTube.Service.FetchService;
-import com.Nikhil308.NikTube.Service.UploadService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import com.Nikhil308.NikTube.Model.*;
 
 import java.io.IOException;
-import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -66,7 +62,7 @@ public class VideoController {
     }
 
 
-    @GetMapping(value = "/videofiles/{id}", produces = MediaType.APPLICATION_OCTET_STREAM_VALUE)
+   /* @GetMapping(value = "/videofiles/{id}", produces = MediaType.APPLICATION_OCTET_STREAM_VALUE)
     public ResponseEntity<byte[]> getMediaContentById(@PathVariable Long id) {
         Optional<Video> optionalMediaEntity = dataRepository.findById(id);
         HttpHeaders headers = new HttpHeaders();
@@ -79,7 +75,7 @@ public class VideoController {
         } else {
             return ResponseEntity.notFound().build();
         }
-    }
+    }*/
 
 
 
@@ -96,6 +92,26 @@ public class VideoController {
         } else {
             return ResponseEntity.notFound().build();
         }
+    }
+
+
+    @GetMapping(value = "/ListOfVideos", produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<VideoJSONData> getListOfVideos() {
+        System.out.println(" Started to fetch List of Videos");
+        List<VideoJSONData> optionalMediaEntity = dataRepository.findListOfVideos();
+        HttpHeaders headers = new HttpHeaders();
+//        headers.setContentDispositionFormData("attachment", "video.mp4");
+//        headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
+        // Set content type to JSON since you're returning a list of data
+        headers.setContentType(MediaType.APPLICATION_JSON);
+
+//        if (optionalMediaEntity.isPresent()) {
+//            Video mediaEntity = optionalMediaEntity.get();
+//            return ResponseEntity.ok().headers(headers).body(mediaEntity.getContent());
+//        } else {
+//            return ResponseEntity.notFound().build();
+//        }
+        return optionalMediaEntity;
     }
 }
 
